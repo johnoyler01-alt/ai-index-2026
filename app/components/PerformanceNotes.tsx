@@ -7,26 +7,61 @@ export function PerformanceNotes() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <section className="min-h-[60vh] flex flex-col justify-center px-6 md:px-12 max-w-4xl mx-auto py-20">
+    <section
+      style={{
+        minHeight: "60vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        padding: "5rem 1.5rem",
+        maxWidth: "56rem",
+        margin: "0 auto",
+        width: "100%",
+      }}
+    >
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="border border-white/10 rounded-2xl p-6 md:p-8 bg-white/5 backdrop-blur-sm"
+        style={{
+          border: "1px solid rgba(255,255,255,0.1)",
+          borderRadius: "1rem",
+          padding: "2rem",
+          background: "rgba(255,255,255,0.05)",
+        }}
       >
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between text-left"
+          style={{
+            width: "100%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            textAlign: "left",
+            background: "none",
+            border: "none",
+            color: "white",
+            cursor: "pointer",
+            padding: 0,
+          }}
         >
           <div>
-            <h3 className="text-xl font-semibold text-white">
+            <h3 style={{ fontSize: "1.25rem", fontWeight: "600", margin: 0 }}>
               ⚡ Engineering Notes
             </h3>
-            <p className="text-sm text-zinc-400 mt-1">
+            <p
+              style={{
+                fontSize: "0.875rem",
+                color: "#a1a1aa",
+                margin: "0.25rem 0 0 0",
+              }}
+            >
               Performance optimizations & technical decisions
             </p>
           </div>
-          <span className="text-zinc-400 text-2xl">{isOpen ? "−" : "+"}</span>
+          <span style={{ color: "#a1a1aa", fontSize: "1.5rem" }}>
+            {isOpen ? "−" : "+"}
+          </span>
         </button>
 
         {isOpen && (
@@ -34,36 +69,87 @@ export function PerformanceNotes() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             transition={{ duration: 0.3 }}
-            className="mt-6 pt-6 border-t border-white/10 space-y-4 text-sm"
+            style={{
+              marginTop: "1.5rem",
+              paddingTop: "1.5rem",
+              borderTop: "1px solid rgba(255,255,255,0.1)",
+              display: "flex",
+              flexDirection: "column",
+              gap: "1rem",
+              fontSize: "0.875rem",
+            }}
           >
             <div>
-              <span className="text-white font-semibold">Bundle Size:</span>
-              <span className="ml-2 text-emerald-400">1.8MB</span>
-              <span className="text-zinc-500 text-xs ml-2">(gzipped)</span>
-              <div className="text-xs text-zinc-500 mt-1">
+              <span style={{ color: "white", fontWeight: "600" }}>
+                Bundle Size:
+              </span>
+              <span style={{ color: "#34d399", marginLeft: "0.5rem" }}>
+                1.8MB
+              </span>
+              <span
+                style={{
+                  color: "#71717a",
+                  fontSize: "0.75rem",
+                  marginLeft: "0.25rem",
+                }}
+              >
+                (gzipped)
+              </span>
+              <div
+                style={{
+                  color: "#71717a",
+                  fontSize: "0.75rem",
+                  marginTop: "0.25rem",
+                }}
+              >
                 Three.js: 180KB · React Three Fiber: 60KB · Framer Motion: 40KB
               </div>
             </div>
 
             <div>
-              <span className="text-white font-semibold">
+              <span style={{ color: "white", fontWeight: "600" }}>
                 Lighthouse Scores
               </span>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-2">
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(4, 1fr)",
+                  gap: "0.75rem",
+                  marginTop: "0.5rem",
+                }}
+              >
                 {[
-                  { label: "Performance", score: 97, color: "emerald" },
-                  { label: "Accessibility", score: 100, color: "emerald" },
-                  { label: "Best Practices", score: 100, color: "emerald" },
-                  { label: "SEO", score: 100, color: "emerald" },
+                  { label: "Performance", score: 97, color: "#34d399" },
+                  { label: "Accessibility", score: 100, color: "#34d399" },
+                  { label: "Best Practices", score: 100, color: "#34d399" },
+                  { label: "SEO", score: 100, color: "#34d399" },
                 ].map(({ label, score, color }) => (
                   <div
                     key={label}
-                    className="bg-white/5 rounded-lg p-3 text-center"
+                    style={{
+                      background: "rgba(255,255,255,0.05)",
+                      borderRadius: "0.5rem",
+                      padding: "0.75rem",
+                      textAlign: "center",
+                    }}
                   >
-                    <div className={`text-${color}-400 text-xl font-bold`}>
+                    <div
+                      style={{
+                        color: color,
+                        fontSize: "1.25rem",
+                        fontWeight: "bold",
+                      }}
+                    >
                       {score}
                     </div>
-                    <div className="text-[10px] text-zinc-500 uppercase tracking-wider">
+                    <div
+                      style={{
+                        color: "#71717a",
+                        fontSize: "0.6rem",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                      }}
+                    >
                       {label}
                     </div>
                   </div>
@@ -72,8 +158,20 @@ export function PerformanceNotes() {
             </div>
 
             <div>
-              <span className="text-white font-semibold">Optimizations:</span>
-              <ul className="list-disc list-inside mt-1 space-y-1 text-xs text-zinc-400">
+              <span style={{ color: "white", fontWeight: "600" }}>
+                Optimizations:
+              </span>
+              <ul
+                style={{
+                  color: "#a1a1aa",
+                  fontSize: "0.75rem",
+                  paddingLeft: "1.5rem",
+                  marginTop: "0.25rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.25rem",
+                }}
+              >
                 <li>GPU instancing for 5,000 particles (single draw call)</li>
                 <li>
                   Pixel ratio capped at 2x to prevent 4K rendering overhead
@@ -86,7 +184,14 @@ export function PerformanceNotes() {
               </ul>
             </div>
 
-            <div className="text-xs text-zinc-500 pt-2 border-t border-white/5">
+            <div
+              style={{
+                color: "#71717a",
+                fontSize: "0.65rem",
+                paddingTop: "0.5rem",
+                borderTop: "1px solid rgba(255,255,255,0.05)",
+              }}
+            >
               Built with Next.js 14, Three.js, Framer Motion · Deployed on
               Vercel
             </div>

@@ -30,7 +30,17 @@ function RotatingShape() {
 
 export function Scene() {
   return (
-    <div className="fixed inset-0 -z-10">
+    <div
+      style={{
+        position: "fixed",
+        top: 0,
+        left: 0,
+        width: "100%",
+        height: "100%",
+        zIndex: 0,
+        backgroundColor: "#000000",
+      }}
+    >
       <Canvas camera={{ position: [0, 0, 5] }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} intensity={0.8} />
