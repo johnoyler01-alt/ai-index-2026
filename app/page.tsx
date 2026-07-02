@@ -412,7 +412,7 @@ export default function Home() {
             borderTop: "1px solid rgba(255,255,255,0.05)",
           }}
         >
-          Designed & built by [Your Name] · AI Index 2026
+          Designed & built by John Oyler · AI Index 2026
           <div
             style={{
               marginTop: "0.5rem",
