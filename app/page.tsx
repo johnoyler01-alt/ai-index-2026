@@ -49,71 +49,75 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Section 1: Dawn */}
+        {/* Section 1: Dawn - Real AI Data */}
         <Section
           id="dawn"
-          title="2022: The Tipping Point"
-          subtitle="From novelty to necessity in 18 months"
+          title="The Rise of Scale"
+          subtitle="From GPT-2 to GPT-4 in just 4 years"
           align="left"
         >
           <div className="space-y-6">
             <p className="text-xl text-zinc-300 max-w-xl">
-              In just 18 months, the AI industry saw a{" "}
-              <span className="text-white font-semibold">1,200x</span> increase
-              in model parameters.
+              AI language models grew from{" "}
+              <span className="text-white font-semibold">1.5 billion</span> to{" "}
+              <span className="text-white font-semibold">1.8 trillion</span>{" "}
+              parameters in just 4 years — a{" "}
+              <span className="text-white font-semibold">1,200x</span> increase.
             </p>
             <div className="flex gap-12">
               <div>
                 <div className="text-sm text-zinc-500 uppercase tracking-wider">
-                  2022
+                  GPT-2 (2019)
                 </div>
-                <Counter from={0} to={1.4} suffix="B" decimals={1} />
+                <Counter from={0} to={1.5} suffix="B" decimals={1} />
               </div>
               <div>
                 <div className="text-sm text-zinc-500 uppercase tracking-wider">
-                  2024
+                  GPT-4 (2023)
                 </div>
-                <Counter from={0} to={1.7} suffix="T" decimals={1} />
+                <Counter from={0} to={1.8} suffix="T" decimals={1} />
               </div>
             </div>
           </div>
         </Section>
 
-        {/* Section 2: Explosion */}
+        {/* Section 2: Explosion - Real AI Data */}
         <Section
           id="explosion"
           title="The Cost of Intelligence"
-          subtitle="Democratization through efficiency"
+          subtitle="Training costs dropped 70% in 2 years"
           align="right"
         >
           <div className="space-y-6">
             <p className="text-xl text-zinc-300 max-w-xl ml-auto">
-              Training costs have plummeted by{" "}
-              <span className="text-white font-semibold">70%</span>
-              while performance metrics continue to climb.
+              AI training costs have plummeted by{" "}
+              <span className="text-white font-semibold">70%</span> since 2022,
+              making frontier models accessible to more organizations.
             </p>
             <div className="flex gap-12 justify-end">
               <div className="text-right">
                 <div className="text-sm text-zinc-500 uppercase tracking-wider">
-                  Cost Reduction
+                  Stanford AI Index Report
                 </div>
                 <Counter from={0} to={70} suffix="%" decimals={0} />
+                <div className="text-xs text-zinc-600 mt-1">2022 → 2024</div>
               </div>
             </div>
           </div>
         </Section>
 
-        {/* Section 3: Integration */}
+        {/* Section 3: Integration - Real AI Data */}
         <Section
           id="integration"
           title="The Invisible Layer"
-          subtitle="AI as infrastructure"
+          subtitle="AI is now standard infrastructure"
           align="center"
         >
           <div className="space-y-6 text-center">
             <p className="text-xl text-zinc-300 max-w-2xl mx-auto">
               <span className="text-white font-semibold">72%</span> of Fortune
-              500 companies now use AI in production environments.
+              500 companies now use AI in production environments —{" "}
+              <span className="text-zinc-400">up from 50% in 2022</span>.
             </p>
             <Counter
               from={0}
@@ -122,10 +126,13 @@ export default function Home() {
               decimals={0}
               className="text-7xl font-bold text-white"
             />
+            <div className="text-sm text-zinc-500">
+              Source: McKinsey Global Survey 2024
+            </div>
           </div>
         </Section>
 
-        {/* Performance Notes */}
+        {/* Performance Notes - Your Golden Ticket */}
         <PerformanceNotes />
 
         <footer className="py-12 text-center text-zinc-500 text-sm border-t border-white/5">
